@@ -549,3 +549,23 @@ def freq(string,passedkey):
 #step6: Call function and pass string in it
 freq("Mary had a little lamb Little lamb, little lamb Mary had a little lamb.Its fleece was white as snow And everywhere that Mary went Mary went, Mary went \
 Everywhere that Mary went The lamb was sure to go","little")
+
+
+
+
+
+###Exception Handling
+
+
+#ZeroDivisionError occurs when you try to divide by zero.
+1/0 
+
+
+#NameError -- in this case, it means that you tried to use the variable a when it was not defined.
+y = a + 5
+
+
+#IndexError -- in this case, it occured because you tried to access data from a list using an index that does not exist for this list.
+a = [1, 2, 3]
+a[10]
+
