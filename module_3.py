@@ -674,3 +674,51 @@ else:
     print("success a=",a)
 finally:
     print("Processing Complete")
+    
+    
+
+
+
+def safe_divide(numerator,denominator):
+    try:
+        result = numerator / denominator
+        return result
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+        return None
+# Test case
+numerator=int(input("Enter the numerator value:-"))
+denominator=int(input("Enter the denominator value:-"))
+print(safe_divide(numerator,denominator))
+
+
+
+
+
+
+import math
+def sq_root(number1):
+    try:
+        result = math.sqrt(number1)
+        return result
+    except ValueError:
+        print("Invalid input! Please enter a positive integer or a float value.")
+        return None
+
+number1 = int or float(input("Enter the number:"))
+print(sq_root(number1))
+
+
+
+
+
+
+def calc(num):
+    try:
+        result = num / (num-5)
+        print(result)
+    except Exception as e:
+        print("Error")
+
+user_input= float(input("Enter a num"))
+calc(user_input)
