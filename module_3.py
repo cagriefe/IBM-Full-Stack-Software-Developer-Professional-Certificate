@@ -755,3 +755,21 @@ class Circle(object):
         
 
 # Create an instance of a class Circle
+
+# Create an object RedCircle
+RedCircle = Circle(10, 'red')
+
+# Find out the methods can be used on the object RedCircle
+dir(RedCircle)
+
+# Print the object attribute radius
+RedCircle.radius
+RedCircle.color
+
+# Set the object attribute radius
+RedCircle.radius = 1
+RedCircle.radius
+
+# Call the method drawCircle
+RedCircle.drawCircle()
+
