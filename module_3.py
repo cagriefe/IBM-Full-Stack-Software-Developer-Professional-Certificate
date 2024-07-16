@@ -813,3 +813,24 @@ class Rectangle(object):
 
 # Create a new object rectangle
 SkinnyBlueRectangle = Rectangle(2, 3, 'blue')
+
+# Print the object attributes
+SkinnyBlueRectangle.height
+SkinnyBlueRectangle.width
+SkinnyBlueRectangle.color
+
+# Use the drawRectangle method to draw the shape
+SkinnyBlueRectangle.drawRectangle()
+
+
+
+# Create a new object rectangle
+FatYellowRectangle = Rectangle(20, 5, 'yellow')
+
+# Print the object attributes
+FatYellowRectangle.height 
+FatYellowRectangle.width
+FatYellowRectangle.color
+
+# Use the drawRectangle method to draw the shape
+FatYellowRectangle.drawRectangle()
