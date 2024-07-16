@@ -773,3 +773,43 @@ RedCircle.radius
 # Call the method drawCircle
 RedCircle.drawCircle()
 
+# Use method to change the object attribute radius
+print('Radius of object:',RedCircle.radius)
+RedCircle.add_radius(2)
+print('Radius of object of after applying the method add_radius(2):',RedCircle.radius)
+RedCircle.add_radius(5)
+print('Radius of object of after applying the method add_radius(5):',RedCircle.radius)
+
+
+# Create a blue circle with a given radius
+BlueCircle = Circle(radius=100)
+
+# Print the object attributes
+BlueCircle.radius
+BlueCircle.color
+
+# Call the method drawCircle
+BlueCircle.drawCircle()
+
+
+
+##Create a class Rectangle
+
+# Create a new Rectangle class for creating a rectangle object
+class Rectangle(object):
+    
+    # Constructor
+    def __init__(self, width=2, height=3, color='r'):
+        self.height = height 
+        self.width = width
+        self.color = color
+    
+    # Method
+    def drawRectangle(self):
+        plt.gca().add_patch(plt.Rectangle((0, 0), self.width, self.height ,fc=self.color))
+        plt.axis('scaled')
+        plt.show()
+        
+
+# Create a new object rectangle
+SkinnyBlueRectangle = Rectangle(2, 3, 'blue')
