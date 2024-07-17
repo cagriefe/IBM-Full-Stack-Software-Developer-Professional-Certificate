@@ -241,3 +241,20 @@ with open('Example2.txt', 'r+') as testwritefile:
     testwritefile.truncate()
     testwritefile.seek(0,0)
     print(testwritefile.read())
+    
+    
+    
+    
+### Copy a file
+
+# Copy file to another
+with open('Example2.txt','r') as readfile:
+    with open('Example3.txt','w') as writefile:
+          for line in readfile:
+                writefile.write(line)
+                
+
+# Verify if the copy is successfully executed
+with open('Example3.txt','r') as testwritefile:
+    print(testwritefile.read())
+    
