@@ -159,3 +159,29 @@ with open('Example2.txt', 'w') as writefile:
     writefile.write("Overwrite\n")
 with open('Example2.txt', 'r') as testwritefile:
     print(testwritefile.read())
+
+
+
+##Appending files
+
+# Write a new line to text file
+with open('Example2.txt', 'a') as testwritefile:
+    testwritefile.write("This is line C\n")
+    testwritefile.write("This is line D\n")
+    testwritefile.write("This is line E\n")
+    
+
+# Verify if the new line is in the text file
+with open('Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+    
+
+##Additional modes
+# r+ : Reading and writing. Cannot truncate the file.
+# w+ : Writing and reading. Truncates the file.
+# a+ : Appending and Reading. Creates a new file, if none exists. You dont have to dwell on the specifics of each mode for this lab.
+
+#a+
+with open('Example2.txt', 'a+') as testwritefile:
+    testwritefile.write("This is line E\n")
+    print(testwritefile.read())
