@@ -115,3 +115,47 @@ with open(example1, "r") as file1:
 FileasList[0]
 FileasList[1]
 FileasList[2]
+
+
+### Write and Save Files
+
+# Write line to file
+exmp2 = 'Example2.txt'
+with open(exmp2, 'w') as writefile:
+    writefile.write("This is line A")
+    
+# Read file
+with open(exmp2, 'r') as testwritefile:
+    print(testwritefile.read())
+    
+# Write lines to file
+with open(exmp2, 'w') as writefile:
+    writefile.write("This is line A\n")
+    writefile.write("This is line B\n")
+    
+# Check whether write to file
+with open(exmp2, 'r') as testwritefile:
+    print(testwritefile.read())
+
+
+# Sample list of text
+Lines = ["This is line A\n", "This is line B\n", "This is line C\n"]
+Lines
+
+
+# Write the strings in the list to text file
+with open('Example2.txt', 'w') as writefile:
+    for line in Lines:
+        print(line)
+        writefile.write(line)
+        
+# Verify if writing to file is successfully executed
+with open('Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
+    
+
+#However, note that setting the mode to w overwrites all the existing data in the file.
+with open('Example2.txt', 'w') as writefile:
+    writefile.write("Overwrite\n")
+with open('Example2.txt', 'r') as testwritefile:
+    print(testwritefile.read())
