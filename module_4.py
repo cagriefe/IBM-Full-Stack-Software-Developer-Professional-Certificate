@@ -72,3 +72,36 @@ print(FileContent)
 # Read first four characters
 with open(example1, "r") as file1:
     print(file1.read(4))
+    
+
+# Read certain amount of characters
+with open(example1, "r") as file1:
+    print(file1.read(4))
+    print(file1.read(4))
+    print(file1.read(7))
+    print(file1.read(15))
+    
+
+# Read certain amount of characters
+with open(example1, "r") as file1:
+    print(file1.read(16))
+    print(file1.read(5))
+    print(file1.read(9))
+    
+
+# Read one line
+with open(example1, "r") as file1:
+    print("first line: " + file1.readline())
+
+#example
+with open(example1, "r") as file1:
+    print(file1.readline(20)) # does not read past the end of line
+    print(file1.read(20)) # Returns the next 20 chars
+
+
+# Iterate through the lines
+with open(example1,"r") as file1:
+        i = 0;
+        for line in file1:
+            print("Iteration", str(i), ": ", line)
+            i = i + 1
