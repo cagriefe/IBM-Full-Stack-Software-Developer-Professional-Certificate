@@ -44,3 +44,31 @@ file1.mode
 FileContent = file1.read()
 FileContent
 
+
+# Print the file with '\n' as a new line
+print(FileContent)
+
+# Type of file content
+type(FileContent)
+
+# Close file after finish
+file1.close()
+
+
+
+## better way to open a file
+
+# Open file using with
+with open(example1, "r") as file1:
+    FileContent = file1.read()
+    print(FileContent)
+
+# Verify if the file is closed
+file1.closed
+
+# See the content of file
+print(FileContent)
+
+# Read first four characters
+with open(example1, "r") as file1:
+    print(file1.read(4))
