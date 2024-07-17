@@ -105,3 +105,13 @@ with open(example1,"r") as file1:
         for line in file1:
             print("Iteration", str(i), ": ", line)
             i = i + 1
+            
+            
+# Read all lines and save as a list
+with open(example1, "r") as file1:
+    FileasList = file1.readlines()
+    
+# Print the lines
+FileasList[0]
+FileasList[1]
+FileasList[2]
