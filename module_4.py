@@ -185,3 +185,59 @@ with open('Example2.txt', 'r') as testwritefile:
 with open('Example2.txt', 'a+') as testwritefile:
     testwritefile.write("This is line E\n")
     print(testwritefile.read())
+    
+
+
+# .tell() - returns the current position in bytes
+# .seek(offset,from) - changes the position by 'offset' bytes with respect to 'from'. From can take the value of 0,1,2 corresponding to beginning, relative to current position and end
+
+with open('Example2.txt', 'a+') as testwritefile:
+    print("Initial Location: {}".format(testwritefile.tell()))
+    
+    data = testwritefile.read()
+    if (not data):  #empty strings return false in python
+            print('Read nothing') 
+    else: 
+            print(testwritefile.read())
+            
+    testwritefile.seek(0,0) # move 0 bytes from beginning.
+    
+    print("\nNew Location : {}".format(testwritefile.tell()))
+    data = testwritefile.read()
+    if (not data): 
+            print('Read nothing') 
+    else: 
+            print(data)
+    
+    print("Location after read: {}".format(testwritefile.tell()) )
+    
+
+
+
+#a note on the difference between w+ and r+. Both of these modes allow access to read and write methods, however, opening a file in w+ overwrites it and deletes all pre-existing data.
+#In the following code block, Run the code as it is first and then run it without the .truncate().
+
+with open('Example2.txt', 'r+') as testwritefile:
+    testwritefile.seek(0,0) #write at beginning of file
+    testwritefile.write("Line 1" + "\n")
+    testwritefile.write("Line 2" + "\n")
+    testwritefile.write("Line 3" + "\n")
+    testwritefile.write("Line 4" + "\n")
+    testwritefile.write("finished\n")
+    testwritefile.seek(0,0)
+    print(testwritefile.read())
+
+
+# To work with a file on existing data, use r+ and a+. While using r+, it can be useful to add a .truncate() method at the end of your data. This will reduce the file to your data and delete everything that follows.
+
+with open('Example2.txt', 'r+') as testwritefile:
+    testwritefile.seek(0,0) #write at beginning of file
+    testwritefile.write("Line 1" + "\n")
+    testwritefile.write("Line 2" + "\n")
+    testwritefile.write("Line 3" + "\n")
+    testwritefile.write("Line 4" + "\n")
+    testwritefile.write("finished\n")
+    #Uncomment the line below
+    testwritefile.truncate()
+    testwritefile.seek(0,0)
+    print(testwritefile.read())
