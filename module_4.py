@@ -293,12 +293,10 @@ z
 
 
 #example to use
-a = {'Student': ['David','Samuel','Terry','Evan'], 
-     'Age': [27,24,22,32], 'Country': ['UK','Canada','China','USA'], 
-     'Course': ['Python','Data Structure','Machine Learning','Web Development'], 
-     'Marks': [85,72,89,76]}
+x = {'Name': ['Rose','John', 'Jane', 'Mary'], 'ID': [1, 2, 3, 4], 'Department': ['Architect Group', 'Software Group', 'Design Team', 'Infrastructure'], 
+      'Salary':[100000, 80000, 50000, 60000]}
 
-df = pd.DataFrame(a)
+df = pd.DataFrame(x)
 
 df
 
@@ -328,3 +326,27 @@ df.loc[0, 'Salary']
 
 df2=df
 df2=df2.set_index("Name")
+
+#To display the first 5 rows of new dataframe
+df2.head()
+
+#Now, let us access the column using the name
+df2.loc['Jane', 'Salary']
+
+#Use the iloc() function to get the Salary of Mary in the newly created dataframe df2.
+df2.iloc[3,2]
+
+
+##Slicing
+
+# let us do the slicing using old dataframe df
+df.iloc[0:2, 0:3]
+
+#let us do the slicing using loc() function on old dataframe df where index column is having labels as 0,1,2
+df.loc[0:2,'ID':'Department']
+
+#let us do the slicing using loc() function on new dataframe df2 where index column is Name having labels: Rose, John and Jane
+df2.loc['Rose':'Jane', 'ID':'Department']
+
+#using loc() function, do slicing on old dataframe df to retrieve the Name, ID and department of index column having labels as 2,3
+df.loc[2:3, 'Name':'Department']
