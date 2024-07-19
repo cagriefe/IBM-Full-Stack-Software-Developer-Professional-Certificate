@@ -258,3 +258,35 @@ with open('Example2.txt','r') as readfile:
 with open('Example3.txt','r') as testwritefile:
     print(testwritefile.read())
     
+
+
+
+### Pandas
+
+import pandas as pd
+
+#Define a dictionary 'x'
+x = {'Name': ['Rose','John', 'Jane', 'Mary'], 'ID': [1, 2, 3, 4], 'Department': ['Architect Group', 'Software Group', 'Design Team', 'Infrastructure'], 
+      'Salary':[100000, 80000, 50000, 60000]}
+
+#casting the dictionary to a DataFrame
+df = pd.DataFrame(x)
+
+#display the result df
+df
+
+
+#Retrieving the "ID" column and assigning it to a variable x
+x = df[['ID']]
+x
+
+#check the type of x
+type(x)
+
+
+#Retrieving the Department, Salary and ID columns and assigning it to a variable z
+z = df[['Department','Salary','ID']]
+z
+
+#Note : x = df[['']] ---> type is frame
+#       x = df[''] ---> type is series
