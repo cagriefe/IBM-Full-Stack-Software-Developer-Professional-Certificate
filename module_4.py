@@ -290,3 +290,41 @@ z
 
 #Note : x = df[['']] ---> type is frame
 #       x = df[''] ---> type is series
+
+
+#example to use
+a = {'Student': ['David','Samuel','Terry','Evan'], 
+     'Age': [27,24,22,32], 'Country': ['UK','Canada','China','USA'], 
+     'Course': ['Python','Data Structure','Machine Learning','Web Development'], 
+     'Marks': [85,72,89,76]}
+
+df = pd.DataFrame(a)
+
+df
+
+
+## loc() and iloc() functions
+
+#loc() is a label-based data selecting method which means that we have to pass the name of the row or column that we want to select. This method includes the last element of the range passed in it.
+#loc[row_label, column_label]
+
+
+## iloc() is an indexed-based selecting method which means that we have to pass an integer index in the method to select a specific row/column. This method does not include the last element of the range passed in it.
+#iloc[row_index, column_index]
+
+
+# Access the value on the first row and the first column
+df.iloc[0, 0]
+
+
+# Access the value on the first row and the third column
+df.iloc[0,2]
+
+# Access the column using the name
+df.loc[0, 'Salary']
+
+
+#Let us create a new dataframe called 'df2' and assign 'df' to it. Now, let us set the "Name" column as an index column using the method set_index()
+
+df2=df
+df2=df2.set_index("Name")
