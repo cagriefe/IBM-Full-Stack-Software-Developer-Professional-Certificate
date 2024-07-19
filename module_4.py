@@ -350,3 +350,39 @@ df2.loc['Rose':'Jane', 'ID':'Department']
 
 #using loc() function, do slicing on old dataframe df to retrieve the Name, ID and department of index column having labels as 2,3
 df.loc[2:3, 'Name':'Department']
+
+
+
+
+### Pandas
+# Read data from CSV file
+
+import pandas as pd
+#from pyodide.http import pyfetch
+import pandas as pd
+
+filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%204/data/TopSellingAlbums.csv"
+
+async def download(url, filename):
+    response = await pyfetch(url)
+    if response.status == 200:
+        with open(filename, "wb") as f:
+            f.write(await response.bytes())
+
+df = pd.read_csv("TopSellingAlbums.csv")
+
+
+
+# Print first five rows of the dataframe
+df.head()
+
+
+# Read data from Excel File and print the first five rows
+xlsx_path = 'https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/jupyterlite/files/Module%205/data/TopSellingAlbums.xlsx'
+df = pd.read_excel(xlsx_path)
+df.head()
+
+
+# Access to the column Length
+x = df[['Length']]
+x
