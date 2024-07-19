@@ -357,19 +357,19 @@ df.loc[2:3, 'Name':'Department']
 ### Pandas
 # Read data from CSV file
 
-import pandas as pd
-#from pyodide.http import pyfetch
-import pandas as pd
+# import pandas as pd
+# #from pyodide.http import pyfetch
+# import pandas as pd
 
-filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%204/data/TopSellingAlbums.csv"
+# filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%204/data/TopSellingAlbums.csv"
 
-async def download(url, filename):
-    response = await pyfetch(url)
-    if response.status == 200:
-        with open(filename, "wb") as f:
-            f.write(await response.bytes())
+# async def download(url, filename):
+#     response = await pyfetch(url)
+#     if response.status == 200:
+#         with open(filename, "wb") as f:
+#             f.write(await response.bytes())
 
-df = pd.read_csv("TopSellingAlbums.csv")
+# df = pd.read_csv("TopSellingAlbums.csv")
 
 
 
@@ -386,3 +386,49 @@ df.head()
 # Access to the column Length
 x = df[['Length']]
 x
+
+
+# Get the column as a series
+x = df['Length']
+x
+
+# Get the column as a dataframe
+x = df[['Artist']]
+type(x)
+x
+
+# Access to multiple columns
+y = df[['Artist','Length','Genre']]
+y
+
+# Access the value on the first row and the first column
+df.iloc[0, 0]
+
+# Access the value on the second row and the first column
+df.iloc[1,0]
+
+# Access the value on the first row and the third column
+df.iloc[0,2]
+
+# Access the value on the second row and the third column
+df.iloc[1,2]
+
+
+# Access the column using the name
+df.loc[1, 'Artist']
+
+# Access the column using the name
+df.loc[1, 'Artist']
+
+# Access the column using the name
+df.loc[0, 'Released']
+
+# Access the column using the name
+df.loc[1, 'Released']
+
+
+# Slicing the dataframe
+df.iloc[0:2, 0:3]
+
+# Slicing the dataframe using name
+df.loc[0:2, 'Artist':'Released']
