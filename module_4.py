@@ -432,3 +432,31 @@ df.iloc[0:2, 0:3]
 
 # Slicing the dataframe using name
 df.loc[0:2, 'Artist':'Released']
+
+
+
+### Numpy
+
+
+# import numpy library
+import numpy as np 
+
+# Create a numpy array
+a = np.array([0, 1, 2, 3, 4])
+a
+
+# Print each element
+print("a[0]:", a[0])
+print("a[1]:", a[1])
+print("a[2]:", a[2])
+print("a[3]:", a[3])
+print("a[4]:", a[4])
+
+# Check NumPy version
+print(np.__version__)
+
+# Check the type of the array
+type(a)
+
+# Check the type of the values stored in numpy array
+a.dtype
