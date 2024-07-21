@@ -460,3 +460,18 @@ type(a)
 
 # Check the type of the values stored in numpy array
 a.dtype
+
+
+# Assign Value
+
+# Create numpy array
+c = np.array([20, 1, 2, 3, 4])
+c
+
+# Assign the first element to 100
+c[0] = 100
+c
+
+# Assign the 5th element to 0
+c[4] = 0
+c
