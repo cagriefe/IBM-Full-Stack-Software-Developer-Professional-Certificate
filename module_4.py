@@ -462,7 +462,7 @@ type(a)
 a.dtype
 
 
-# Assign Value
+## Assign Value
 
 # Create numpy array
 c = np.array([20, 1, 2, 3, 4])
@@ -475,3 +475,35 @@ c
 # Assign the 5th element to 0
 c[4] = 0
 c
+
+
+## Slicing
+
+# Slicing the numpy array]
+d = c[1:4]
+d
+
+# Set the fourth element and fifth element to 300 and 400
+c[3:5] = 300, 400
+c
+
+
+# We can also define the steps in slicing, like this: [start:end:step].
+arr = np.array([1, 2, 3, 4, 5, 6, 7])
+
+print(arr[1:5:2])
+
+#If we don't pass start its considered 0
+print(arr[:4])
+
+# If we don't pass end it considers till the length of array.
+print(arr[4:])
+
+#If we don't pass step its considered 1
+print(arr[1:5:])
+
+
+# Print the even elements in the given array.
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+
+print(arr[1::2])
