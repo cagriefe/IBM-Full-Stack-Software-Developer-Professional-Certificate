@@ -657,3 +657,50 @@ b
 # Numpy Array Division
 c = np.divide(a, b)
 c
+
+
+
+# Dot Product
+
+X = np.array([1, 2])
+Y = np.array([3, 2])
+
+
+# Calculate the dot product
+np.dot(X, Y)
+
+#Elements of X
+print(X[0])
+print(X[1])
+
+#Elements of Y
+print(Y[0])
+print(Y[1])
+
+
+
+# Adding Constant to a Numpy Array
+
+# Create a constant to numpy array
+u = np.array([1, 2, 3, -1]) 
+u
+
+# Add the constant to array
+u + 1
+
+
+
+# Mathematical Functions
+
+# The value of pi
+np.pi
+
+# Create the numpy array in radians
+x = np.array([0, np.pi/2 , np.pi])
+
+
+# Calculate the sin of each elements
+y = np.sin(x)
+y
+
+
