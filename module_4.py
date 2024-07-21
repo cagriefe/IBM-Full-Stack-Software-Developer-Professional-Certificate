@@ -507,3 +507,63 @@ print(arr[1:5:])
 arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
 
 print(arr[1::2])
+
+
+## Assign Value with List
+
+# Create the index list
+select = [0, 2, 3, 4]
+select
+
+
+# Use List to select elements
+d = c[select]
+d
+
+# Assign the specified elements to new value
+c[select] = 100000
+c
+
+## Other Attributes
+
+# Create a numpy array
+a = np.array([0, 1, 2, 3, 4])
+a
+
+# Get the size of numpy array
+a.size
+
+# Get the number of dimensions of numpy array
+a.ndim
+
+# Get the shape/size of numpy array
+a.shape
+
+
+
+## Numpy Statistical Functions
+
+# Create a numpy array
+a = np.array([1, -1, 1, -1])
+
+
+# Get the mean(total) of numpy array
+mean = a.mean()
+mean
+
+# Get the standard deviation of numpy array
+standard_deviation=a.std()
+standard_deviation
+
+
+# Create a numpy array
+b = np.array([-1, 2, 3, 4, 5])
+b
+
+# Get the biggest value in the numpy array
+max_b = b.max()
+max_b
+
+# Get the smallest value in the numpy array
+min_b = b.min()
+min_b
