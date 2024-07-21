@@ -613,3 +613,47 @@ def Plotvec1(u, z, v):
 # Plot numpy arrays
 Plotvec1(u, z, v)
 plt.show()
+
+
+
+
+import numpy as np
+# Array Subtraction
+
+a = np.array([10, 20, 30])
+a
+
+b = np.array([5, 10, 15])
+b
+
+c = np.subtract(a, b)
+
+print(c)
+
+
+
+# Array Multiplication
+
+x = np.array([1, 2])
+x
+
+y = np.array([2, 1])
+y
+
+# Numpy Array Multiplication
+z = np.multiply(x, y)
+z
+
+
+
+# Array Division
+
+a = np.array([10, 20, 30])
+a
+
+b = np.array([2, 10, 5])
+b
+
+# Numpy Array Division
+c = np.divide(a, b)
+c
