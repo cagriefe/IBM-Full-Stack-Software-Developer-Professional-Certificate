@@ -782,3 +782,50 @@ A[0][0:2]
 
 # Access the element on the first and second rows and third column
 A[0:2, 2]
+
+
+
+# Basic Operations
+
+# Create a numpy array X
+X = np.array([[1, 0], [0, 1]]) 
+X
+
+# Create a numpy array Y
+Y = np.array([[2, 1], [1, 2]]) 
+Y
+
+# Add X and Y
+Z = X + Y
+Z
+
+# Multiply Y with 2
+Z = 2 * Y
+Z
+
+# Multiply X with Y
+Z = X * Y
+Z
+
+
+# Create a matrix A,B
+A = np.array([[0, 1, 1], [1, 0, 1]])
+A
+
+B = np.array([[1, 1], [1, 1], [-1, 1]])
+B
+
+# Calculate the dot product
+Z = np.dot(A,B)
+Z
+
+# Calculate the sine of Z
+np.sin(Z)
+
+
+# Create a matrix C
+C = np.array([[1,1],[2,2],[3,3]])
+C
+
+# Get the transposed of C
+C.T
