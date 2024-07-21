@@ -704,3 +704,30 @@ y = np.sin(x)
 y
 
 
+
+#Linspace
+
+#numpy.linspace(start, stop, num = int value)
+# start : start of interval range
+# stop : end of interval range
+# num : Number of samples to generate.
+
+
+# Makeup a numpy array within [-2, 2] and 5 elements
+np.linspace(-2, 2, num=5)
+
+# Make a numpy array within [-2, 2] and 9 elements
+np.linspace(-2, 2, num=9)
+
+# Make a numpy array within [0, 2π] and 100 elements 
+x = np.linspace(0, 2*np.pi, num=100)
+
+# Calculate the sine of x list
+y = np.sin(x)
+
+# Plot the result
+
+import matplotlib.pyplot as plt
+plt.plot(x, y)
+plt.show()
+
