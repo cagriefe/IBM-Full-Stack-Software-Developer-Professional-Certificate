@@ -212,3 +212,24 @@ r.json()
 
 # The key args has the name and values:
 r.json()['args']
+
+
+
+## Post Requests
+
+# Like a GET request, a POST is used to send data to a server, but the POST request sends the data in a request body. In order to send the Post Request in Python, in the URL we change the route to POST:
+url_post='http://httpbin.org/post'
+
+# To make a POST request we use the post() function, the variable payload is passed to the parameter  data :
+r_post=requests.post(url_post,data=payload)
+
+# Comparing the URL from the response object of the GET and POST request we see the POST request has no name or value pairs.
+print("POST request URL:",r_post.url )
+print("GET request URL:",r.url)
+
+# We can compare the POST and GET request body, we see only the POST request has a body:
+print("POST request body:",r_post.request.body)
+print("GET request body:",r.request.body)
+
+# We can view the form as well:
+r_post.json()['form']
