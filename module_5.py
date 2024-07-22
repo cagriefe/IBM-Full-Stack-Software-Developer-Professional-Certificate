@@ -363,3 +363,155 @@ sibling_1
 #`sibling_2` is the `header` element, which is also a sibling of both `sibling_1` and `tag_object`
 sibling_2 = sibling_1.next_sibling
 sibling_2
+
+
+### Filter
+# Filters allow you to find complex patterns, the simplest filter is a string. In this section we will pass a string to a different filter method and Beautiful Soup will perform a match against that exact string. Consider the following HTML of rocket launches:
+table = "<table><tr><td id='flight'>Flight No</td><td>Launch site</td> \
+<td>Payload mass</td></tr><tr> <td>1</td> \
+<td><a href='https://en.wikipedia.org/wiki/Florida'>Florida<a></td> \
+<td>300 kg</td></tr><tr><td>2</td> \
+<td><a href='https://en.wikipedia.org/wiki/Texas'>Texas</a></td> \
+<td>94 kg</td></tr><tr><td>3</td> \
+<td><a href='https://en.wikipedia.org/wiki/Florida'>Florida<a> </td> \
+<td>80 kg</td></tr></table>"
+
+table_bs = BeautifulSoup(table, 'html5lib')
+
+## find_All
+# The <code>find_all()</code> method looks through a tag's descendants and retrieves all descendants that match your filters.
+# The Method signature for <code>find_all(name, attrs, recursive, string, limit, **kwargs)<c/ode>
+
+## Name
+# When we set the <code>name</code> parameter to a tag name, the method will extract all the tags with that name and its children.
+
+table_rows = table_bs.find_all('tr')
+table_rows
+
+# The result is a Python iterable just like a list, each element is a <code>tag</code> object:
+first_row = table_rows[0]
+first_row
+
+# The type is tag
+print(type(first_row))
+
+# If we iterate through the list, each element corresponds to a row in the table:
+for i, row in enumerate(table_rows):
+    print("row", i, "is", row)
+    
+
+# As <code>row</code> is a <code>cell</code> object, we can apply the method <code>find_all</code> to it and extract table cells in the object <code>cells</code> using the tag <code>td</code>, this is all the children with the name <code>td</code>. The result is a list, each element corresponds to a cell and is a <code>Tag</code> object, we can iterate through this list as well. We can extract the content using the <code>string</code> attribute.
+
+for i, row in enumerate(table_rows):
+    print("row", i)
+    cells = row.find_all('td')
+    for j, cell in enumerate(cells):
+        print('colunm', j, "cell", cell)
+        
+        
+## Attributes
+# If the argument is not recognized it will be turned into a filter on the tag's attributes. For example with the <code>id</code> argument, Beautiful Soup will filter against each tag's <code>id</code> attribute. For example, the first <code>td</code> elements have a value of <code>id</code> of <code>flight</code>, therefore we can filter based on that <code>id</code> value.
+
+table_bs.find_all(id="flight")
+
+# We can find all the elements that have links to the Florida Wikipedia page:
+
+list_input = table_bs.find_all(href="https://en.wikipedia.org/wiki/Florida")
+list_input
+
+# If we set the <code>href</code> attribute to True, regardless of what the value is, the code finds all anchor tags with <code>href</code> value:
+table_bs.find_all('a', href=True)
+
+
+
+### string
+
+# With string you can search for strings instead of tags, where we find all the elments with Florida:
+table_bs.find_all(string="Florida")
+
+
+
+### Find
+
+two_tables="<h3>Rocket Launch </h3> \
+<p><table class='rocket'> \
+<tr><td>Flight No</td><td>Launch site</td><td>Payload mass</td></tr> \
+<tr><td>1</td><td>Florida</td><td>300 kg</td></tr> \
+<tr><td>2</td><td>Texas</td><td>94 kg</td></tr> \
+<tr><td>3</td><td>Florida </td><td>80 kg</td></tr></table></p>\
+<p><h3>Pizza Party</h3> \
+<table class='pizza'> \
+<tr><td>Pizza Place</td><td>Orders</td><td>Slices </td></tr> \
+<tr><td>Domino's Pizza</td><td>10</td><td>100</td></tr> \
+<tr><td>Little Caesars</td><td>12</td><td >144 </td></tr> \
+<tr><td>Papa John's</td><td>15 </td><td>165</td></tr>"
+
+#We create a <code>BeautifulSoup</code> object  <code>two_tables_bs</code>
+two_tables_bs = BeautifulSoup(two_tables, 'html.parser')
+
+#We can find the first table using the tag name table
+two_tables_bs.find("table")
+
+# We can filter on the class attribute to find the second table, but because class is a keyword in Python, we add an underscore to differentiate them.
+two_tables_bs.find("table", class_='pizza')
+
+
+
+### Downloading And Scraping The Contents Of A Web Page
+
+url = "http://www.ibm.com"
+
+# We use <code>get</code> to download the contents of the webpage in text format and store in a variable called <code>data</code>:
+data = requests.get(url).text
+
+# We create a <code>BeautifulSoup</code> object using the <code>BeautifulSoup</code> constructor
+soup = BeautifulSoup(data, "html5lib")  # create a soup object using the variable 'data'
+
+# Scrape all links
+for link in soup.find_all('a', href=True):  # in html anchor/link is represented by the tag <a>
+    print(link.get('href'))
+    
+
+# Scrape all images Tags
+for link in soup.find_all('img'):  # in html image is represented by the tag <img>
+    print(link)
+    print(link.get('src'))
+    
+## Scrape data from HTML tables
+# The below url contains an html table with data about colors and color codes.
+url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/labs/datasets/HTMLColorCodes.html"
+
+# Before proceeding to scrape a web site, you need to examine the contents and the way data is organized on the website. Open the above url in your browser and check how many rows and columns there are in the color table.
+# get the contents of the webpage in text format and store in a variable called data
+data = requests.get(url).text
+
+soup = BeautifulSoup(data, "html5lib")
+
+# find a html table in the web page
+table = soup.find('table')  # in html table is represented by the tag <table>
+
+# Get all rows from the table
+for row in table.find_all('tr'):  # in html table row represented by tag <tr>
+    # Get all columns in each row.
+    cols = row.find_all('td')  # in html a column is represented by tag <td>
+    color_name = cols[2].string  # store the value in column 3 as color_name
+    color_code = cols[3].text  # store the value in column 4 as color_code
+    print("{}--->{}".format(color_name, color_code))
+    
+    
+    
+## Scraping tables from a Web page using Pandas
+
+#Particularly for extracting tabular data from a web page, you may also use the `read_html()` method of the Pandas library. 
+
+# The below url contains an html table with data about colors and color codes.
+url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/labs/datasets/HTMLColorCodes.html"
+
+#You may extract all the tables from the given webpage simply by using the following commands.
+import pandas as pd
+
+tables = pd.read_html(url)
+tables
+
+#`tables` is now a list of dataframes representing the tables from the web page, in the sequence of their appearance. In the current  URL, there is only a single table, so the same can be accessed as shown below.
+tables[0]
