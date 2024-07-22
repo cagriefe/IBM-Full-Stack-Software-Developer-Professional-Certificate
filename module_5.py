@@ -177,3 +177,38 @@ path = os.path.join(os.getcwd(), 'content1.txt')
 r = requests.get(URL)
 with open(path, 'wb') as f:
     f.write(r.content)
+    
+    
+import json    
+## Get Request with URL Parameters
+
+url_get='http://httpbin.org/get'
+
+# A query string is a part of a uniform resource locator (URL), this sends other information to the web server. The start of the query is a ?, followed by a series of parameter and value pairs, as shown in the table below. The first parameter name is name and the value is Joseph. The second parameter name is ID and the Value is 123. Each pair, parameter, and value is separated by an equals sign, =. The series of pairs is separated by the ampersand &.
+
+# To create a Query string, add a dictionary. The keys are the parameter names and the values are the value of the Query string.
+payload={"name":"Joseph","ID":"123"}
+
+# Then passing the dictionary payload to the params parameter of the  get() function:
+r=requests.get(url_get,params=payload)
+
+# We can print out the URL and see the name and values.
+r.url
+
+# There is no request body.
+print("request body:", r.request.body)
+
+# We can print out the status code.
+print(r.status_code)
+
+# We can view the response as text:
+print(r.text)
+
+# We can look at the 'Content-Type'.
+r.headers['Content-Type']
+
+# As the content 'Content-Type' is in the JSON format we can use the method json(), it returns a Python dict:
+r.json()
+
+# The key args has the name and values:
+r.json()['args']
