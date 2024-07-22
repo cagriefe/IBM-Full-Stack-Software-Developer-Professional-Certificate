@@ -306,3 +306,60 @@ pd.DataFrame(results)
 # The result is in a nested json format. The 'nutrition' column contains multiple subcolumns, so the data needs to be 'flattened' or normalized.
 df2 = pd.json_normalize(results)
 df2
+
+
+
+## Web Scraping 
+
+from bs4 import BeautifulSoup # this module helps in web scrapping.
+import requests  # this module helps us to download a web page
+
+#Beautiful Soup is a Python library for pulling data out of HTML and XML files, we will focus on HTML files. This is accomplished by representing the HTML as a set of objects with methods used to parse the HTML.  We can navigate the HTML as a tree, and/or filter out what we are looking for.
+#Consider the following HTML:
+html = "<!DOCTYPE html><html><head><title>Page Title</title></head><body><h3> \
+<b id='boldest'>Lebron James</b></h3><p> Salary: $ 92,000,000 </p> \
+<h3>Stephen Curry</h3><p> Salary: $85,000,000</p> \
+<h3>Kevin Durant</h3><p> Salary: $73,200,000</p></body></html>"
+
+# To parse a document, pass it into the <code>BeautifulSoup</code> constructor. The <code>BeautifulSoup</code> object represents the document as a nested data structure:
+soup = BeautifulSoup(html, 'html5lib')
+
+# We can use the method <code>prettify()</code> to display the HTML in the nested structure:
+print(soup.prettify())
+
+
+
+## Tags
+
+# Let's say we want the  title of the page and the name of the top paid player. We can use the <code>Tag</code>. The <code>Tag</code> object corresponds to an HTML tag in the original document, for example, the tag title.
+tag_object = soup.title
+print("tag object:", tag_object)
+
+# we can see the tag type <code>bs4.element.Tag</code>
+print("tag object type:", type(tag_object))
+
+# If there is more than one <code>Tag</code> with the same name, the first element with that <code>Tag</code> name is called. This corresponds to the most paid player:
+tag_object = soup.h3
+tag_object
+
+
+## Children, Parents, and Siblings
+
+# As stated above, the Tag object is a tree of objects. We can access the child of the tag or navigate down the branch as follows:
+tag_child = tag_object.b
+tag_child
+
+# You can access the parent with the parent.
+parent_tag = tag_child.parent
+parent_tag
+
+#tag_object parent is the body element.
+tag_object.parent
+
+#<code>tag_object</code> sibling is the <code>paragraph</code> element.
+sibling_1 = tag_object.next_sibling
+sibling_1
+
+#`sibling_2` is the `header` element, which is also a sibling of both `sibling_1` and `tag_object`
+sibling_2 = sibling_1.next_sibling
+sibling_2
