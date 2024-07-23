@@ -664,3 +664,106 @@ async def download(url, filename):
 
 df = pd.read_excel("file_example_XLSX_10.xlsx")
 df
+
+
+### XML file format
+
+# XML is also known as Extensible Markup Language
+
+## Writing with xml.etree.ElementTree
+
+import xml.etree.ElementTree as ET
+
+# create the file structure
+employee = ET.Element('employee')
+details = ET.SubElement(employee, 'details')
+first = ET.SubElement(details, 'firstname')
+second = ET.SubElement(details, 'lastname')
+third = ET.SubElement(details, 'age')
+first.text = 'Shiv'
+second.text = 'Mishra'
+third.text = '23'
+
+# create a new XML file with the results
+mydata1 = ET.ElementTree(employee)
+# myfile = open("items2.xml", "wb")
+# myfile.write(mydata)
+with open("new_sample.xml", "wb") as files:
+    mydata1.write(files)
+ 
+ 
+ 
+    
+## Reading with xml.etree.ElementTree
+
+import xml.etree.ElementTree as etree
+import pandas as pd
+
+tree = etree.parse("Sample-employee-XML-file.xml")
+
+root = tree.getroot()
+columns = ["firstname", "lastname", "title", "division", "building","room"]
+
+datatframe = pd.DataFrame(columns = columns)
+
+for node in root: 
+
+    firstname = node.find("firstname").text
+
+    lastname = node.find("lastname").text 
+
+    title = node.find("title").text 
+    
+    division = node.find("division").text 
+    
+    building = node.find("building").text
+    
+    room = node.find("room").text
+    
+    datatframe = pd.concat([datatframe, pd.Series([firstname, lastname, title, division, building, room], index = columns)], ignore_index = True)
+
+datatframe
+
+
+## Reading xml file using pandas.read_xml function
+# Herein xpath we mention the set of xml nodes to be considered for migrating  to the dataframe which in this case is details node under employees.
+df=pd.read_xml("Sample-employee-XML-file.xml", xpath="/employees/details") 
+df
+
+
+### Save Data
+
+datatframe.to_csv("employee.csv", index=False)
+df = pd.read_csv("employee.csv")
+df
+
+
+
+### Read/Save Other Data Formats
+
+## Binary File Format
+
+# Reading the Image file
+
+# importing PIL 
+from PIL import Image 
+
+# Uncomment if running locally
+import urllib.request
+urllib.request.urlretrieve("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg", "dog.jpg")
+
+filename = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg"
+
+async def download(url, filename):
+    response = await pyfetch(url)
+    if response.status == 200:
+        with open(filename, "wb") as f:
+            f.write(await response.bytes())
+
+download(filename, "./dog.jpg")
+
+# Read image 
+img = Image.open('./dog.jpg','r') 
+  
+# Output Images 
+img.show()

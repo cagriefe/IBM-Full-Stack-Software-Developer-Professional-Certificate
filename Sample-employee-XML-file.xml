@@ -1,0 +1,18 @@
+<employees>
+    <employee>
+        <firstname>John</firstname>
+        <lastname>Doe</lastname>
+        <title>Software Engineer</title>
+        <division>Development</division>
+        <building>Main</building>
+        <room>24A</room>
+    </employee>
+    <employee>
+        <firstname>Jane</firstname>
+        <lastname>Smith</lastname>
+        <title>Project Manager</title>
+        <division>Project Management</division>
+        <building>Annex</building>
+        <room>1B</room>
+    </employee>
+</employees>
