@@ -515,3 +515,56 @@ tables
 
 #`tables` is now a list of dataframes representing the tables from the web page, in the sequence of their appearance. In the current  URL, there is only a single table, so the same can be accessed as shown below.
 tables[0]
+
+
+
+### Different file formats
+
+# Comma-separated values (CSV) file format
+
+# Reading data from CSV in Python
+
+# The Pandas Library is a useful tool that enables us to read various datasets into a Pandas data frame
+import pandas as pd
+
+df = pd.read_csv("addresses.csv", header=None)
+df
+
+# Adding column name to the DataFrame
+df.columns =['First Name', 'Last Name', 'Location ', 'City','State','Area Code']
+df
+
+# Selecting a single column
+df['First Name']
+
+# Selecting multiple columns
+df = df[['First Name', 'Last Name', 'Location ', 'City','State','Area Code']]
+df
+
+# Selecting rows using .iloc and .loc
+# To select the first row
+df.loc[0]
+
+# To select the 0th,1st and 2nd row of "First Name" column only
+df.loc[[0,1,2], "First Name" ]
+
+# To select the 0th,1st and 2nd row of "First Name" column only
+df.iloc[[0,1,2], 0]
+
+
+
+## Transform Function in Pandas
+# import library
+import pandas as pd
+import numpy as np
+
+# creating a dataframe
+df=pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['a', 'b', 'c'])
+df
+
+# applying the transform function
+df = df.transform(func = lambda x : x + 10)
+df
+
+# Now we will use DataFrame.transform() function to find the square root to each element of the dataframe.
+result = df.transform(func = ['sqrt'])
