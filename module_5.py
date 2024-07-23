@@ -568,3 +568,77 @@ df
 
 # Now we will use DataFrame.transform() function to find the square root to each element of the dataframe.
 result = df.transform(func = ['sqrt'])
+
+
+
+### JSON file Format
+
+# JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write.
+
+import json
+
+## Writing JSON to a File
+
+person = {
+    'first_name' : 'Mark',
+    'last_name' : 'abc',
+    'age' : 27,
+    'address': {
+        "streetAddress": "21 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "10021-3100"
+    }
+}
+
+# serialization using dump() function
+
+# json.dump() method can be used for writing to JSON file.
+
+# Syntax: json.dump(dict, file_pointer)
+
+# Parameters:
+
+# dictionary – name of the dictionary which should be converted to JSON object.
+# file pointer – pointer of the file opened in write or append mode.
+
+with open('person.json', 'w') as f:  # writing JSON object
+    json.dump(person, f)
+    
+
+# serialization using dumps() function
+# json.dumps() that helps in converting a dictionary to a JSON object.
+
+# It takes two parameters:
+
+# dictionary – name of the dictionary which should be converted to JSON object.
+# indent – defines the number of units for indentation
+
+# Serializing json  
+json_object = json.dumps(person, indent = 4) 
+  
+# Writing to sample.json 
+with open("sample.json", "w") as outfile: 
+    outfile.write(json_object)
+    
+print(json_object)
+
+
+## Reading JSON to a File
+# Using json.load()
+# The JSON package has json.load() function that loads the json content from a json file into a dictionary.
+
+# It takes one parameter:
+
+# File pointer : A file pointer that points to a JSON file.
+
+import json 
+  
+# Opening JSON file 
+with open('sample.json', 'r') as openfile: 
+  
+    # Reading from json file 
+    json_object = json.load(openfile) 
+  
+print(json_object) 
+print(type(json_object))
