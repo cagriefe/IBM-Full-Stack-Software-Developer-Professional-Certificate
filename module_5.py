@@ -642,3 +642,25 @@ with open('sample.json', 'r') as openfile:
   
 print(json_object) 
 print(type(json_object))
+
+
+
+### XLSX file format
+
+## Reading the data from XLSX file
+
+import urllib.request
+import pandas as pd
+
+urllib.request.urlretrieve("https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%205/data/file_example_XLSX_10.xlsx", "sample.xlsx")
+
+filename = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/labs/Module%205/data/file_example_XLSX_10.xlsx"
+
+async def download(url, filename):
+    response = await pyfetch(url)
+    if response.status == 200:
+        with open(filename, "wb") as f:
+            f.write(await response.bytes())
+
+df = pd.read_excel("file_example_XLSX_10.xlsx")
+df
