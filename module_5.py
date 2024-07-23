@@ -797,3 +797,57 @@ df.head(5)
 df.shape
 
 
+
+### Statistical Overview of dataset
+
+# This method prints information about a DataFrame including the index dtype and columns, non-null values and memory usage.
+df.info()
+
+# Pandas describe() is used to view some basic statistical details like percentile, mean, standard deviation, etc. of a data frame or a series of numeric values. When this method is applied to a series of strings, it returns a different output
+df.describe()
+
+
+
+### Identify and handle missing values
+# We use Python's built-in functions to identify these missing values. There are two methods to detect missing data:
+
+# .isnull()
+
+# .notnull()
+
+# The output is a boolean value indicating whether the value that is passed into the argument is in fact missing data.
+
+missing_data = df.isnull()
+missing_data.head(5)
+
+
+
+## Correct data format
+
+# Check all data is in the correct format (int, float, text or other).
+
+# In Pandas, we use
+
+# .dtype() to check the data type
+
+# .astype() to change the data type
+
+# Numerical variables should have type 'float' or 'int'.
+
+
+# As we can see below, All columns have the correct data type.
+df.dtypes
+
+
+
+### Visualization
+
+# Visualization is one of the best way to get insights from the dataset. Seaborn and Matplotlib are two of Python's most powerful visualization libraries.
+# import libraries
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+labels= 'Not Diabetic','Diabetic'
+plt.pie(df['Outcome'].value_counts(),labels=labels,autopct='%0.02f%%')
+plt.legend()
+plt.show()
