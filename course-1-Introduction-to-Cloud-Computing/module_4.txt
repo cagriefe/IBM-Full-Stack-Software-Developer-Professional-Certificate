@@ -7,3 +7,32 @@
 
 ## Serverless computing is an approach to computing that offloads responsibility for common infrastructure management tasks for application runtimes to cloud providers, allowing developers to focus their time and effort on development and testing, and not have to worry about provisioning, maintaining and scaling compute resources.
 
+
+
+#### Cloud Native Applications, DevOps, and Application Modernization
+
+## Cloud native applications are applications that are built or refactored to work in the cloud environment. These applications, developed using DevOps methodologies, consist of microservices packaged in containers that can run in any environment—making it possible to create and update features in quick iterative cycles.
+
+## DevOps is a collaborative approach that enables development and operations teams to continuously deliver software in quick iterative cycles while reducing overhead, duplication, and rework. DevOps’ tools, practices, and processes help tackle the complexities and challenges posed by the cloud, allowing solutions to be delivered and updated quickly and reliably.
+
+## Application modernization helps organizations accelerate their digital transformation, take advantage of new technologies and services, and become more responsive to changing market dynamics. Cloud computing is one of the key enablers of application modernization.
+
+
+
+Emergent Trends and Practices terms and definitions:
+
+- API → Application Programming Interface
+- Application modernization → Helps organizations accelerate their digital transformation, take advantage of new technologies and services, and become more responsive to changing market dynamics
+- Cloud native application → An application developed from the outset to work only in the cloud environment, or an existing app that has been refactored and reconfigured with cloud native principles
+- Continuous delivery → Delivering small, well-designed, high-quality increments of software to customers
+- Continuous deployment → Progressing each new packaged build through the deployment lifecycle as rapidly as possible
+- Continuous integration → Creating packaged builds of the code changes released as immutable images
+- Continuous monitoring → Monitoring with tools that help developers understand the performance and availability of their applications, even before they’re deployed to production
+- Delivery pipeline → An automated sequence of steps that involves the stages of Ideation, Coding, Building, Deploying, Managing, and Continuous Improvement
+- DevOps → Collaborative approach where business owners and the development, operations, and quality assurance teams collaborate to continuously deliver software
+- Hybrid multicloud → An open standards-based stack that can be deployed on any public cloud infrastructure
+- Microservices → Break down large applications into their core functions
+- Microservices architecture → Approach in which a single application is composed of many loosely coupled and independently deployable, smaller components or services
+- Monolithic architecture → Approach in which a single application is built out of one piece of software
+- Serverless → Approach to computing that offloads responsibility for common infrastructure management tasks
+- Service discovery → Creates a roadmap for microservices to communicate
