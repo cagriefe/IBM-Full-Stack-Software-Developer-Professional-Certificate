@@ -1,0 +1,23 @@
+#### Cloud Security and Monitoring
+
+## Cloud security refers to the policies, technological procedures, services, and solutions designed to secure enterprise applications and data on the cloud against insider threats, data breaches, compliance issues, and organized security threats. 
+
+## Cloud security is a shared responsibility between the cloud provider and the user organization. 
+
+## Security architecture and methods for achieving continuous security need to be embedded through the life cycle of an application to ensure that the application runs on a safe platform, the code is free from vulnerabilities, and the operational risks are understood. 
+
+## Identity and Access Management, also known as access control, helps authenticate and authorize users and provides user-specific access to cloud resources, services, and applications.
+
+## As part of their Identity and Access Management services, most cloud providers offer users the ability to define access groups and create access policies that define permissions for users on account resources.
+
+## Cloud encryption, often called the last line of defense, encrypts data and provides robust data access control, key management, and certificate management.
+
+## Data needs encryption in three states:
+
+    # Encryption at rest: Protecting data while it is stored
+
+    # Encryption in transit: Protecting data while it is transmitted from one location to another
+
+    # Encryption in use: Protecting data when it is in use in memory
+
+## All connected systems and cloud-based services should be monitored to maintain visibility of all data exchanges between public, private, and hybrid cloud environments. This ensures that the cloud provides a trusted platform to integrate with your enterprise data centers securely.
