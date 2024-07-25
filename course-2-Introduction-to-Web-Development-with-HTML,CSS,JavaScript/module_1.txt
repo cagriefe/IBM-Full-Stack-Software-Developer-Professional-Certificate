@@ -1,0 +1,50 @@
+#### Introduction to Application Development
+
+## Front-end developers work on the parts of the website or app that the user sees and interact with. 
+
+## Back-end developers work on the logic and functionality that keeps the website or app running and responding to users’ inputs. 
+
+## Full-stack developers have both sets of skills. 
+
+## Front-end developers and back-end developers work closely together. 
+
+## Frameworks and libraries extend the functionality of coding languages such as JavaScript and Python. 
+
+## Common languages for front-end development include: HTML, CSS, and JavaScript. 
+
+## Common languages and frameworks for back-end development include: Python, Django, and Flask. 
+
+## Version control systems keep track of changes and resolve conflicts between them. 
+
+## CI/CD (Continuous Integration with Continuous Delivery/Deployment) is a best practice developers use to deliver frequent changes reliably. 
+
+
+
+## Terms and definitions:
+
+- AngularJS → An open-source JavaScript framework for dynamic web applications
+- Application Programming Interface (API) → Code that allows two software programs to communicate with each other
+- Build Automation → Allows you to download dependencies, compile code, package binary code, run tests, deploy to production
+- Build Automation Servers → Execute build-automation utilities on a scheduled or triggered basis
+- Build Automation Utilities → Generate executables by compiling and linking code
+- Continuous Integration/Continuous Deployment (CI/CD) → A method for releasing code and integrating it into code that has already been developed to prevent the application from breaking throughout the app’s lifecycle
+- Django → A framework for Python web development
+- Dynamic Content → Data that is created each time a request is sent to a server
+- Endpoint → The point at which an API connects with the software program
+- Frameworks → Provide a standard way to build an application, dictating architecture and program flow
+- IDE → “Integrated Development Environment” helps create and manage code
+- Inversion of Control → A predefined workflow where the developer is not in full control of how the application operates
+- JavaScript Framework → An application framework written in JavaScript to create responsive sites
+- LESS → “Learner Style Sheets” add more style and functions to CSS
+- less.js → A JavaScript tool that converts LESS styles to CSS
+- Libraries → Reusable collections of code
+- Opinionated → Frameworks that have a lot of control are sometimes considered “opinionated”
+- Package Managers → Coordinate with file archivers to extract packages, verify checksums and digital certificates, and manage updates and dependencies
+- Packages → Archive files that include app files, installation instructions, and metadata
+- React.js → A JavaScript framework developed by Facebook that helps build and drop elements onto a page
+- Responsive Design → Design technique that automatically resizes a display to adapt to a specific screen size
+- Route → Allows front-end client to connect to the correct backend socket, determining paths for network traffic
+- SASS → “Syntactically Awesome Stylesheets” are an extension of CSS
+- Static Content → A display of data that has been previously stored on a server
+- Version Control → Allows you to revert to earlier versions of code, resolve conflicts, and manage code branches
+- Vue.js → A community-based JavaScript framework focused on UI, including components like buttons and visual elements, serving as both a library and a framework
