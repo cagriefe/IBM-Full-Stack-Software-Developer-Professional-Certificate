@@ -1,0 +1,17 @@
+CSS creates a uniform look throughout each element of each page of the website. 
+
+CSS is usually coded in external style sheets and creates base styles for a website. 
+
+CSS frameworks assists in implementing UI elements and creating dynamic web pages. 
+
+CSS has two types of frameworks: 
+
+Utility-first frameworks, which provide utility classes to help in building one's own styles and layouts. 
+
+Component frameworks, which provide a wide selection of pre-styled components and templates that can be implemented onto a website. 
+
+Plain (Vanilla) CSS lets developers write the styles and layouts of a website. 
+
+HTML5 elements provide structure and function to websites. 
+
+HTML5 uses the <input> tag to allow users to input information.
