@@ -1,0 +1,48 @@
+JavaScript is a scripting language that enables developers to add dynamic content to web pages.
+
+JavaScript variables are declared using the 'let' or 'const' keywords and take their type from the value assigned.
+
+Program execution is controlled by statements like If…Then…Else, Switch, For loops, and While loops.
+
+JavaScript uses blocks of code, called functions, that can be called from anywhere in the script.
+
+New methods and properties can be added to an object by modifying the prototype for that object.
+
+Prototypes allow you to define properties and methods for all instances of a specific object.
+
+Client-side scripts are programs that accompany HTML documents and are used by developers to incorporate more interactive elements.
+
+The script tag can incorporate a script within an HTML document or call a script from an external file.
+
+The Document Object Model (DOM) is the programming interface between HTML or XHTML and JavaScript.
+
+Developers can access HTML DOM elements from JavaScript scripts using the correct DOM notation.
+
+APIs are often used to access HTML DOM elements in web pages.
+
+
+
+Terms and definitions:
+
+- AJAX → "Asynchronous JavaScript and XML" is a programming concept for creating interactive web applications using HTML, JavaScript, CSS, and the Document Object Model. Often uses JSON instead of XML.
+- Anonymous Functions → Functions without a name, often used as parameters for other functions, executed immediately after declaration.
+- Array → A data structure for storing and retrieving data by indexed keys, using zero-based indexing and can dynamically grow or shrink.
+- Classes → Blueprints for creating objects with similar characteristics and behaviors, encapsulating data (properties) and functions (methods).
+- Client-Side Script → Programs accompanying or embedded in HTML to validate forms, process input, or create document elements, using the `<script>` tag.
+- Document Objects → Represent the main web page, providing access to all HTML elements via the "document."
+- DOM → "Document Object Model" is an API between HTML and JavaScript, allowing dynamic access and updates to content, structure, and style.
+- Element Nodes → HTML tags.
+- Element Objects → Base class for all elements in a document, containing methods and properties common to all elements.
+- Event → An action, like a button click or form submission, that JavaScript can respond to.
+- Event Binding → Instructing the browser to call a function when an event occurs.
+- Event Handlers → Functions that execute actions in response to events, such as button clicks.
+- Extend → Keyword used in class declarations to create a subclass from another class.
+- Functions → Modules of code that perform tasks, possibly taking in data (parameters) and returning data (return value).
+- IIFE → "Immediately Invoked Function Expression" runs immediately after definition and cannot be called again.
+- Nodes → Basic elements in the DOM structure.
+- Objects → Instances created from a class, representing real-world entities with properties and methods.
+- Prototypes → Define and add properties or methods to objects, allowing inheritance and modification of prototype state.
+- Script → Enables modification and extension of HTML documents for interactivity, triggered by events.
+- Self-Executing Functions → Used to initialize data or declare DOM elements, often anonymous.
+- Text Nodes → Contain the text between element start and end tags.
+- this → Refers to the current instance of an object, with its value depending on how the object is called.
