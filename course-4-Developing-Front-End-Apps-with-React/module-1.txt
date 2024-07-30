@@ -1,0 +1,249 @@
+# Introduction to React and Class Components
+
+## JSX Syntax
+
+### Fragments
+JSX allows you to include multiple tags within a single parent tag. For this, you can use empty tags, also known as fragments.
+
+```jsx
+<>
+  <h1>This is a heading tag</h1>
+</>
+```
+
+### Parent Tag
+JSX also allows you to include multiple tags within a single parent tag using tags like the `div` tag.
+
+```jsx
+<div>
+  <h1>This is a heading tag</h1>
+</div>
+```
+
+## Class Component
+
+### Basic Structure
+A class component extends the `Component` class and requires a `render` method.
+
+```jsx
+import React, { Component } from 'react';
+
+export default class Extra extends Component {
+  render() {
+    return (
+      <>
+        <p>This is a class component</p>
+      </>
+    );
+  }
+}
+```
+
+### State Management
+State can be managed using `this.state` within the constructor of the class component.
+
+```jsx
+import React, { Component } from 'react';
+
+export default class Extra extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      <>
+        <p>This is a paragraph</p>
+      </>
+    );
+  }
+}
+```
+
+### Access Data of State Management
+Data can be accessed by including the variable name declared within curly braces.
+
+```jsx
+import React, { Component } from 'react';
+
+export default class Extra extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      <>
+        <p>The count is {this.state.count}</p>
+      </>
+    );
+  }
+}
+```
+
+## Props in Class Component
+
+### Passing Props
+Props can be sent from the parent component as attributes to the child component.
+
+```jsx
+import React, { Component } from 'react';
+import Extra from './Extra';
+
+export default class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: "Manager"
+    };
+  }
+
+  render() {
+    return (
+      <>
+        <Extra title={this.state.title} />
+      </>
+    );
+  }
+}
+```
+
+### Accessing Props in Child Component
+Props can be accessed within the child class component using `this.props.variable_name`.
+
+```jsx
+import React, { Component } from 'react';
+
+export default class Extra extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      <>
+        <p>The count value is {this.props.title}</p>
+      </>
+    );
+  }
+}
+```
+
+## Event Handling in Class Component
+
+### Handling Events
+Events such as click events are handled by defining a function before the render method.
+
+```jsx
+import React, { Component } from 'react';
+
+class MyComponent extends Component {
+  handleClick() {
+    alert('Button clicked!');
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Event Handling in Class Component</h1>
+        <button onClick={this.handleClick}>Click Me</button>
+      </div>
+    );
+  }
+}
+
+export default MyComponent;
+```
+
+
+
+
+
+# React and JavaScript Terms
+
+- **App.jsx**  
+  The root component of the React application.
+
+- **Babel**  
+  A tool used to compile JSX code in the browser.
+
+- **Class**  
+  A template or blueprint for creating objects.
+
+- **const**  
+  Allows you to declare constants whose values cannot be changed.
+
+- **eslintrc.cjs**  
+  A configuration file used by ESLint, which is a popular linting tool for JavaScript. The `.cjs` extension indicates that it is a CommonJS module.
+
+- **ECMAScript 6 (ES6)**  
+  A standard specification for JavaScript that came out in 2015, defining new features and syntax.
+
+- **Framework**  
+  A comprehensive software development platform that provides a foundation and structure for building entire applications.
+
+- **Front-end Framework**  
+  A framework that focuses on building the user-facing side of web applications.
+
+- **.gitignore**  
+  A file that specifies which files and directories should be ignored by Git version control.
+
+- **Hook**  
+  A feature in React that allows developers to handle states and other features seamlessly, eliminating the need for class-based coding.
+
+- **Index.html**  
+  A fundamental part of web development projects, serving as the entry point for web applications.
+
+- **JavaScript XML (JSX)**  
+  A JavaScript syntax extension enabling HTML-like code within JavaScript.
+
+- **let**  
+  Allows you to restrict the scope of variables within the block where they are declared.
+
+- **main.jsx**  
+  The entry point for the React application.
+
+- **Node modules**  
+  A directory that contains all the dependencies installed through npm or yarn.
+
+- **package.json**  
+  A file that contains metadata about the project and dependencies.
+
+- **Public directory**  
+  A directory that contains static assets like HTML files, images, and fonts.
+
+- **React**  
+  An open-source JavaScript library that facilitates the creation of dynamic and interactive user interfaces for web applications.
+
+- **README.md**  
+  A file that provides information about the project, including setup instructions, usage guidelines, and project documentation.
+
+- **src directory**  
+  A directory that contains the source code for the React application.
+
+- **Subclass**  
+  The class that is inheriting another class.
+
+- **Superclass**  
+  The class being inherited by the subclass.
+
+- **this**  
+  A reference to the current object.
+
+- **var**  
+  A variable that can be used or referred from anywhere in the code.
+
+- **Vite**  
+  A build tool that speeds up the building and development of web projects by optimizing how current browsers handle JavaScript modules.
+
+- **vite.config.js**  
+  A file that contains configuration settings for the Vite build tool.
