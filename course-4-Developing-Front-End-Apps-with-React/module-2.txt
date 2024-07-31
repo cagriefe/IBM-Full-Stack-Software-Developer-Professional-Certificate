@@ -25,3 +25,21 @@ The mounting phase initializes the component, sets up the initial state, and per
 In the updating phase, React re-invokes the function body and re-evaluates JSX.
 
 In the unmounting phase, React executes cleanup operations when removing a component from the DOM.
+
+
+
+### Array in React and DOM Manipulation
+
+You use the array data structures often to store groups of items in a single variable.
+
+Two important array methods include: 
+
+map(), which makes it easier to make new arrays by applying a function to each element
+
+forEach(), which runs a function on each array element without creating a new array
+
+The DOM allows access to and dynamically manipulates web documents’ content, structure, and style.
+
+React's virtual DOM abstracts the actual DOM implemented in memory and keeps the virtual DOM in sync with the real DOM by React’s reconciliation process.
+
+React’s virtual DOM updates only the necessary parts of the DOM, improving the application's performance, especially in scenarios where only specific components or elements need to be updated.
