@@ -1,0 +1,27 @@
+### Introduction to Function Components
+
+Props principles include reusability, unidirectional data flow, customization, and composition.
+
+You can use the "useState" hook with an event to control a child component.
+
+You use component composition to combine smaller components to create a complex UI. 
+
+Principles of component composition include abstraction, reusability, hierarchy, props and children, and higher-order components.
+
+State management allows you to manage data that can change over time within a component.
+
+The useState hook enables function components to manage the component's state locally.
+
+You can use this syntax when using the useState hook:
+
+Call the "useState" function and pass in the initial state as a parameter.
+
+Assign the return value to a const array variable using a destructured array.
+
+The array has two values: the state name and the state name prefixed with the keyword "set."
+
+The mounting phase initializes the component, sets up the initial state, and performs side effects.
+
+In the updating phase, React re-invokes the function body and re-evaluates JSX.
+
+In the unmounting phase, React executes cleanup operations when removing a component from the DOM.
