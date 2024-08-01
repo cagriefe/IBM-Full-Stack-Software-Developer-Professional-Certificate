@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import "./FeedbackForm.css"; // Import CSS for styling
 
@@ -40,7 +41,7 @@ const FeedbackForm = () => {
     <>
       <nav>Tell Us What You Think</nav>
       <form onSubmit={handleSubmit} className="feedback-form">
-        <h2>We'd Love to Hear From You!</h2>
+        <h2>We would Love to Hear From You!</h2>
         <p>Please share your feedback with us.</p>
         <input
           type="text"

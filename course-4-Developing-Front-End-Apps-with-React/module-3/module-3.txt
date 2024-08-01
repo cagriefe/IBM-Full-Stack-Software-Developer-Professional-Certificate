@@ -1,0 +1,16 @@
+### Hooks and Form Management in React
+
+The useEffect hook in React enables the execution of side effects within functional components. In React's useEffect hook, dependencies refer to variables or values that determine when useEffect should run.
+
+Custom hooks allow you to abstract complex logic and easily reuse it across different components in your application.
+
+External services are any program, platform, or infrastructure your application uses to connect to and work with other applications over a network.
+
+APIs enable you to acquire data, execute operations, or add extra features to your application.
+
+Within React, components typically manage form data.
+
+React inputs are classified into two categories: controlled and uncontrolled. In uncontrolled input, React puts the value on the page, and the browser keeps track of the rest. Controlled inputs, require you to write the code to manage the value explicitly.
+
+Access control methods are frameworks for regulating access to physical or digital resources. There are two types of access control methods: traditional and innovative.
+
