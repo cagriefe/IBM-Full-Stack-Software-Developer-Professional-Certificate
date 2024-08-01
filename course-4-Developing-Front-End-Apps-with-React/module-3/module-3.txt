@@ -14,3 +14,22 @@ React inputs are classified into two categories: controlled and uncontrolled. In
 
 Access control methods are frameworks for regulating access to physical or digital resources. There are two types of access control methods: traditional and innovative.
 
+
+
+
+### Application State Management with Redux
+
+The Redux elements involved in updating the component properties include actions, the Store, and reducers.
+
+Redux makes use of the entire application's states as opposed to using component states.
+
+Within Redux, the existing application states reside within an object known as the store.
+
+You use action objects to communicate to the store what data you need to update and use reducers to tell the application how to make the update. 
+
+Reducers are pure functions that receive the current state and an action object and return a new state with the actions performed.
+
+Synchronous operations run in a first-to-last sequence, beginning the next operation only after the previous one has finished. 
+
+Asynchronous operations can occur in parallel. They don't require the previous operation to be completed before beginning the next. 
+
