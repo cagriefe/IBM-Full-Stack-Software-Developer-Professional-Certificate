@@ -10,7 +10,8 @@ let myPromise2 = new Promise((resolve,reject) => {
 
   myPromise1.then((successMessage) => {
     console.log("From Callback " + successMessage)
-    myPromise2.then((successMessage) => {
-      console.log("From Callback " + successMessage)
-    })
   })
+
+  myPromise2.then((successMessage) => {
+  console.log("From Callback " + successMessage)
+})
