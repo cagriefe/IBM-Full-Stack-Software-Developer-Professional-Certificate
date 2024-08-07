@@ -67,3 +67,66 @@ Connection information
 37.Stateless	All requests from a client to a server for resources happen in isolation from each other. The server is unaware of the application's state on the client, so this information needs to be passed with every request.
 38.Cacheable	The ability to store data on the client so that data can be used in a future request.
 39.Middleware	Software that sits between applications, databases, or services and allows those different technologies to communicate.
+
+
+
+### Module Summary
+
+Developers rely on third-party packages to extend Node.js.  
+
+You can use the npm application to manage Node.js packages in your Node.js framework installation. 
+
+The MVC architecture style divides a back-end application into three parts: the model, the view, and the controller.  
+
+REST API frameworks use HTTP methods to communicate with each other. 
+
+Express abstracts low-level details.  
+
+Routing can be handled at the application level or at the router level.  
+
+Five types of middleware are application level, router level, error handling, built-in middleware, and third party.  
+
+Template rendering is the ability of the server to fill in dynamic content.  
+
+The npm jsonwebtoken package should be required in an Express application to authenticate a user. 
+
+
+
+### Terms and Definitions
+
+Access Token	A small piece of code that contains information about the user, their permissions, groups, and expirations that get passed from a server to the client.
+API Endpoint	The touchpoint where the API connects to the application it is communicating with.
+Application-Level Middleware	Acts as a gatekeeper and is bound to the application. No request to the application server can go past it. 
+Authentication	The process of confirming a user’s identity using credentials by validating who they claim to be. Authentication assures an application’s security by guaranteeing that only those with valid credentials can access the system. 
+Authorization	In token-based authentication, it is the process that gets executed when a web application wants to access a protected resource. A user authenticates against an authorization server. 
+Built-In Middleware	Can be bound to either the entire application or to specific routers. Useful for activities such as rendering HTML pages from the server, parsing JSON input from the front end, and parsing cookies. 
+Controller	The layer in an MVC application regulates the flow of the data. It is responsible for processing the data supplied to it by the user and sends that data to the model for manipulation or storage. 
+Error-Handling Middleware	Can be bound to either the entire application or to specific routers. Error-handling middleware always takes four  arguments: error, request, response, and the next function that it needs to be chained to. Even if you don’t use the next parameter, you still define it in the method signature. 
+Express.js	A web application framework based on the Node.js runtime environment, however, Express abstracts low-level details. 
+Framework	A framework is a skeleton on which an application is built for a specific environment. The framework is the fundamental structure that supports the application. 
+HTTP Headers	Additional information about and contained in an HTTP response or request. 
+HTTP Request	A method called by a client and sent to a server requesting access to a resource on the server. 
+HTTP Response	A method called by a server and sent to a client in response to an HTTP request. 
+ID Token	An artifact that proves that a user has been authenticated and contains information about authorized API routes. 
+JSON Payload	Data that is transferred in JSON format between the client and server in the header of an HTTP method. 
+JWT	A JSON Web token. An internet standard for creating encrypted payload data in JSON format. 
+Middleware	Includes functions that have access to the request and response objects and the next() function. 
+Model	The layer in an MVC application responsible for managing the data of the application. It interacts with the database and handles the data logic. 
+MVC	Short for “Model-View-Controller”. It is an architectural pattern that divides an application into three components: model, view, and controller. 
+Node Framework	A framework that works in conjunction with Node.js. A framework is a skeleton on which an application is built for a specific environment. The framework is the fundamental structure that supports the application. 
+npm	An application that manages Node.js packages in your Node.js framework installation. 
+Passwordless Authentication	A type of authentication that uses public/private key pairs to encrypt and decrypt data passed between client and server without the need for a password. 
+Private Key	In cryptography, it is a key that is known only to a specific client used to decrypt messages. Used in conjunction with a public key. 
+Public Key	In cryptography, it is a key that can be used by anyone to encrypt messages for a specific client. Used in conjunction with a private key. 
+REST	“Representational state transfer” is a set of guidelines for creating stateless client/server interfaces using HTTP methods. 
+REST API	An API used for communicating between clients and servers that conforms to REST architecture principles. 
+Route	The code that associates an HTTP request method and a URL. 
+Router-Level Middleware	Bound to a router and not bound to an application. You can use specific middleware for a specific route instead of having all requests go through the same middleware. Then you bind the application routes to each router. 
+Session-based Authentication	A type of authentication where a user provides login credentials that are verified against stored credentials in a database on a server. A session ID is provided to the client and stored in the browser as a cookie. 
+Statelessness	Implies that each HTTP request happens in isolation in relation to other requests. The state of the client is not stored on the server; the state is passed to the server by the client for each request. 
+Template Rendering	The ability of the server to fill in dynamic content in an HTML template. 
+Token	Contains three parts, the header, the payload, and the signature. The header contains information about the type of token and the algorithm used to create it. The payload contains user attributes, called claims, such as permissions, groups, and expirations. The signature verifies the token’s integrity, meaning that the token hasn’t changed during transit. 
+Token-based Authentication	A type of authentication that uses access tokens, often JWTs, which get passed between server and client with the data that is passed between the two. 
+TypeScript	A language that builds on top of JavaScript and provides type safety which assists with the development of large-scale applications by reducing the complexity of component development in JavaScript. 
+View	The layer in an MVC application responsible for rendering the presentation of the data that is passed to it by the model. 
+xml2js	Node.js package to parse a string of XML elements into a JavaScript object. 
