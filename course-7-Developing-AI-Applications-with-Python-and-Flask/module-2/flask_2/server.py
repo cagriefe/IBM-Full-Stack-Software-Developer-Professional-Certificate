@@ -149,3 +149,8 @@ def add_by_uuid():
         return {"message": "No data provided"}, 400
     
     return {"message": "Person added"}, 201
+
+
+@app.errorhandler(404)
+def api_not_find(error):
+    return {"message": "API not found"}, 404
