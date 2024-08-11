@@ -111,4 +111,31 @@ def search_name():
             return person
     
     return {"message": "No match found"}, 404
-        
+
+
+@app.route("/count")
+def count_data():
+    try:
+        return {"count": len(data)}, 200
+    except NameError:
+        return {"message": "Data not found"}, 500
+    
+
+@app.route("/person/<var_name>")
+def find_by_uuid(var_name):
+    for person in data:
+        if person["id"] == str(var_name):
+            return person
+    return {"message": "No match found"}, 404
+
+
+@app.route("/person/<var_name>", methods=['DELETE'])
+def delete_person(var_name):
+    for person in data:
+        if person["id"] == var_name:
+            # Remove the person from the data list
+            data.remove(person)
+            # Return a JSON response with a message and HTTP status code 200 (OK)
+            return {"message": "Person with ID deleted"}, 200
+    # If no person with the given ID is found, return a JSON response with a message and HTTP status code 404 (Not Found)
+    return {"message": "Person not found"}, 404
