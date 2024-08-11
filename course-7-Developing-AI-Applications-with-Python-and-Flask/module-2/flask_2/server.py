@@ -139,3 +139,13 @@ def delete_person(var_name):
             return {"message": "Person with ID deleted"}, 200
     # If no person with the given ID is found, return a JSON response with a message and HTTP status code 404 (Not Found)
     return {"message": "Person not found"}, 404
+
+
+@app.route("/person", methods=['POST'])
+def add_by_uuid():
+    new_person = request.get_json()
+    
+    if not new_person:
+        return {"message": "No data provided"}, 400
+    
+    return {"message": "Person added"}, 201
