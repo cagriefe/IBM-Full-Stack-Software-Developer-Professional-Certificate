@@ -1,0 +1,19 @@
+### Introduction to Databases 
+
+Structured Query Language, or SQL, was designed to manage data in relational databases and is useful for handling structured data. 
+
+Data is a collection of facts in words, numbers, and pictures. 
+
+A database is a repository of data that provides functionality for adding, modifying, and querying data. 
+
+Relational databases store tabular data as collections of related items, with columns containing item properties. 
+
+The basic SQL statements are CREATE TABLE, INSERT, SELECT, UPDATE, and DELETE. 
+
+Non-relational databases provide a flexible and scalable approach to storing and retrieving data.
+
+Relational databases are ideal for the optimized storage, retrieval, and processing of large volumes of data. 
+
+RDBMS is a mature and well-documented technology, providing flexibility, reduced redundancy, ease of backup and disaster recovery, and ACID compliance. 
+
+An Entity-Relationship model is a tool for designing relational databases. Entities become tables, and attributes are translated into columns. 
