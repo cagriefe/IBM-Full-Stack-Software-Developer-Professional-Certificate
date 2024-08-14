@@ -191,3 +191,32 @@ Finds the minimum value in a column.
 SELECT MIN(column1) FROM table_name;
 
 
+
+### Creating Tables, Sorting Results, and Join
+
+CREATE, ALTER, TRUNCATE, and DROP define, change, or drop database objects such as tables. 
+
+The CREATE TABLE statement includes the definition of attributes of columns in the table, including:  
+
+Names of columns
+
+Datatypes of columns
+
+Optional values, if required, such as the Primary Key constraint 
+
+The ORDER BY clause is used in a SQL query to sort the result set by a specified column. For example, “ORDER BY title” sorts the result set by the column named “title.” 
+
+You can also specify the sort of column by indicating the column sequence number. For example, “select title, pages from book ORDER BY 2” indicates that the sort order is based on the values in the second column.  
+
+The JOIN operator combines rows from two or more tables based on a relationship between certain columns in these tables. 
+
+The tables being joined are related by a common column, which is usually the primary key of one table and appears as a foreign key in the other table. 
+
+The Primary Key of a relational table uniquely identifies each row in a table. 
+
+A Foreign Key is a set of columns referring to a primary key of another entity. 
+
+If you need to combine data from three or more different tables, add new tables to the joins. First, you combine table A and table B information by matching their shared attributes. Then, you join the information from table B and table C by matching their shared attributes. 
+
+SQL offers several types of JOINs - such as INNER JOIN and OUTER JOIN. You can extract a data set corresponding to the intersection of the two tables involved or choose a bigger data set. 
+
