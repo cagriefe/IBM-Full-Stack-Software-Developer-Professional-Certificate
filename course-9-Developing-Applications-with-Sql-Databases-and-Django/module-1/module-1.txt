@@ -17,3 +17,32 @@ Relational databases are ideal for the optimized storage, retrieval, and process
 RDBMS is a mature and well-documented technology, providing flexibility, reduced redundancy, ease of backup and disaster recovery, and ACID compliance. 
 
 An Entity-Relationship model is a tool for designing relational databases. Entities become tables, and attributes are translated into columns. 
+
+
+### Basic SQL Statements
+
+Structured Query Language, or SQL, is used for querying and managing data. 
+
+SQL is useful for handling structured data or data incorporating relations among entities and variables.
+
+The SQL SELECT statement retrieves data from a relational database table. 
+
+The SELECT statement is a query, and the output we get from executing this query is a Result Set or a Result Table.
+
+In its simplest form, the syntax for a SELECT statement is: SELECT * from TableName
+
+The SQL INSERT statement inserts data into a relational database table by adding rows.
+
+The syntax of the INSERT statement is: INSERT INTO TableNameColumnName VALUES (values)
+
+For the INSERT statement, the values provided in the Values clause must equal the number of column names specified in the Column Name list. This ensures that each column has a value. 
+
+The SQL UPDATE statement is used to read and modify data.
+
+The syntax of the UPDATE statement is as follows:  UPDATE [TableName] SET [[ColumnName]=[Value]] <WHERE [Condition]>
+
+The SQL DELETE statement is used to remove data from a table.
+
+The syntax of the DELETE statement is: DELETE FROM [TableName] <Where [Condition]>
+
+The WHERE clause specifies the rows in a table that will be acted on by a SQL statement such as SELECT, DELETE, or UPDATE.
