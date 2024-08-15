@@ -1,0 +1,28 @@
+### ORM: Bridging the Gap Between the Real World and Relational Model
+
+The Object-Oriented Programming (OOP) and SQL paradigm model data differently.
+
+Object Relational Mapping, or ORM bridges the gap between OOP and SQL.
+
+ORM libraries or tools can map and transfer data stored in a relational database as rows into objects or objects into rows.
+
+ORM allows developers to use OOP to query and manipulate data because it transfers objects into rows and rows into objects.
+
+Django ORM is a Python ORM component that belongs to the Django web application framework.
+
+Django ORM can help speed up database development because you define maps to a database table for each Django model.
+
+Each Django field maps to a column type.
+
+Django automatically creates tables once models and fields are defined.
+
+Django APIs can perform Create, Read, Update, and Delete (CRUD) operations on database objects.
+
+In a Django model, you create an object and call the model’s save method to insert it into the database as a record.
+
+You must construct a QuerySet using a Manager on your model class to read objects using Django Model API.
+
+There are several ways to update database records in Django by updating objects.
+
+To delete records in a database, you call Django ORM’s Delete method on a model object or query set.
+
