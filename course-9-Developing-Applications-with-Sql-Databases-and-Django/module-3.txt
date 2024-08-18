@@ -1,0 +1,34 @@
+### Full-stack Django Development
+
+The Model-View-Controller design pattern divides application logic into three components:
+
+Model accesses and manipulates data
+
+View presents data in various forms
+
+Controller coordinates between Model and View
+
+The Django Model-View-Template pattern is like MVC, except there is no Controller, and the Django server performs the controller function.
+
+In Django, a View is a Python function that takes a Web request and applies the necessary logic to generate a Web response.
+
+Django uses a template containing static HTML elements and special Python code to generate dynamic Web pages.
+
+When you create a Django project, Django creates some core files.
+
+manage.py is a command-line interface used to interact with the Django project
+
+settings.py contains the settings and configurations for your Django project
+
+urls.py contains the URL and routing definitions of your Django app
+
+You start building a Django admin site by creating an admin user.
+
+You can then log in as a superuser and register your models to the admin site so you can manage them.
+
+You can customize the admin form and add search and filters.
+
+A Django View takes a Web request such as HTTP GET, POST, DELETE, or UPDATE and returns a Web response. The web response can be a string, JSON/XML file, HTML page, or an error status indicating client or server-side errors.
+
+You create templates in Django to specify how your data will be presented. A Django template combines static HTML elements with Django template tags and variables to describe how the dynamic parts will be inserted. These work together to generate an HTML page rendered in a user’s web browser.
+
