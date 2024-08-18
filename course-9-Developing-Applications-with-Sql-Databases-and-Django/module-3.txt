@@ -32,3 +32,93 @@ A Django View takes a Web request such as HTTP GET, POST, DELETE, or UPDATE and 
 
 You create templates in Django to specify how your data will be presented. A Django template combines static HTML elements with Django template tags and variables to describe how the dynamic parts will be inserted. These work together to generate an HTML page rendered in a user’s web browser.
 
+
+
+Package/Method - Description - Code Example
+
+count()
+
+Counts the number of objects.
+
+
+MyModel.objects.count()
+
+
+Sum()
+
+Provides the sum of a field.
+
+
+MyModel.objects.aggregate(Sum('field'))
+
+
+Avg()
+
+Calculates the average of a field.
+
+
+MyModel.objects.aggregate(Avg('field'))
+
+
+Max()
+
+Provides the maximum value of a field.
+
+
+MyModel.objects.aggregate(Max('field'))
+
+
+Min()
+
+Provides the minimum value of a field.
+
+
+MyModel.objects.aggregate(Min('field'))
+
+
+order_by()
+
+Orders objects based on a field.
+
+
+MyModel.objects.order_by('field')
+
+
+order_by(-)
+
+Order objects based on fields in descending order.
+
+
+MyModel.objects.order_by('-field')
+
+
+select_related
+
+Performs inner join.
+
+
+MyModel.objects.select_related('related_model')
+
+
+prefetch_related
+
+Performs left Outer join.
+
+
+MyModel.objects.prefetch_related('related_model')
+
+
+many_to_many
+
+Performs many-to-many join.
+
+
+obj.many_to_many_field.all()
+
+filter(ForeignKey)
+
+Performs conditional joins.
+
+
+MyModel.objects.filter(related_model__isnull=True)
+
