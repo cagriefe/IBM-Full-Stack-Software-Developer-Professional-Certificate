@@ -6,7 +6,10 @@ from django.urls import reverse
 from django.views import generic
 from django.http import Http404
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User, username, logger
+from django.contrib.auth.models import User
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Create your views here.
 def registration_request(request):
