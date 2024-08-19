@@ -1,0 +1,291 @@
+### Module 4 Summary: Consolidate and Deploy Your Django App
+
+
+Both function-based and class-based views are Python functions.
+
+When you build a class-based view, you define a class subclassing the Django View base class. Then you access some standard methods such as Get or Post. Next, you implement your logic to handle HTTP requests.
+
+To speed up development and solve common tasks, Django provides some built-in view classes called generic-based views for developers to reuse.
+
+Authentication is validating users’ identities using credentials such as username and password.
+
+After users are authenticated, authorization will check the users’ access permissions for resources such as databases.
+
+In Django, a user model is created to handle authentication and to work with other models, such as groups and permissions, to handle authorization.
+
+Developers can extend the User model to define application-specific users, such as instructors or learners inherited from the User model.
+
+Bootstrap, a free web front-end framework, facilitates web app development.
+
+Bootstrap provides many HTML and CSS templates to simplify Django template development.
+
+If you want to use Bootstrap CSS style classes without downloading Bootstrap, add a link to the latest Bootstrap version into the head element of your HTML template.
+
+To add static files to your apps, you first create folders for different static files, such as HTML templates, images, or CSS files.
+
+Under each folder to hold static files, you create a subfolder using the same app name. This creates name spacing to uniquely refer to static files that use the same name across multiple apps in a Django project. 
+
+Django provides a set of STACFILES_FINDERS for locating the static files in an app. It also provides a staticfiles app to collect all static files in a single directory when an app is deployed.
+
+To deploy reliable, scalable, and maintainable Django apps, you need to deploy them on web servers. 
+
+Since most web servers are not written in Python, Django apps need extra interfaces to talk to web servers.
+
+The Web Server Gateway Interface, or WSGI, is the main Python standard for communicating between Web servers and applications.
+
+The Django app supports the Asynchronous Server Gateway Interface, another web server interface.
+
+Infrastructure as a Service and Platform as a Service offering allows you to focus on your app development and deploy apps without worrying about the underlying Infrastructure and platform
+
+
+### Cheat Sheet
+
+ListView: 
+
+Displays a list of objects. 
+
+class MyListView(ListView): 
+
+    model = MyModel 
+
+    template_name = 'my_template.html' 
+
+    context_object_name = 'object_list'  # default: object_list 
+
+DetailView 
+
+Displays details of a single object. 
+
+class MyDetailView(DetailView): 
+
+    model = MyModel 
+
+    template_name = 'my_template.html' 
+
+    context_object_name = 'object'  # default: object 
+
+    pk_url_kwarg = 'my_model_id'  # default: pk 
+
+CreateView 
+
+Displays a form to create a new object. 
+
+class MyCreateView(CreateView): 
+
+    model = MyModel 
+
+    template_name = 'my_template.html' 
+
+    fields = '__all__'  # or specify a list of fields 
+
+UpdateView 
+
+Displays a form to update an existing object. 
+
+class MyUpdateView(UpdateView): 
+
+    model = MyModel 
+
+    template_name = 'my_template.html' 
+
+    fields = '__all__'  # or specify a list of fields 
+
+    pk_url_kwarg = 'my_model_id'  # default: pk 
+
+DeleteView 
+
+Displays a confirmation page to delete an object. 
+
+class MyDeleteView(DeleteView): 
+
+    model = MyModel 
+
+    template_name = 'my_template.html' 
+
+    success_url = '/success-url/' 
+
+    pk_url_kwarg = 'my_model_id'  # default: pk 
+
+Basic View Function 
+
+Function-based view that returns “Hello, World!” 
+
+ 
+
+From Django.http import HttpResponse 
+
+def my_view(request): 
+
+    # Your view logic here 
+
+    return HttpResponse("Hello, World!") 
+
+Render a Template 
+
+Function-based view to render a template with context. 
+
+ 
+
+From django.shortcuts import render 
+
+def my_template_view(request): 
+
+    context = {'variable': value} 
+
+    return render(request, 'my_template.html', context) 
+
+Redirect to a URL 
+
+Function-based view to redirect to a specific URL. 
+
+ 
+
+From django.shortcuts import redirect 
+
+def my_redirect_view(request): 
+
+    return redirect('url_name_or_path') 
+
+Handle a Form Submission 
+
+Function-based view to handle form submission. 
+
+ 
+
+From django.shortcuts import render 
+
+def my_form_view(request): 
+
+    if request.method == 'POST': 
+
+        # Process the form data here 
+
+    else: 
+
+        # Display the form 
+
+    return render(request, 'my_form_template.html', context) 
+
+Handle URL Parameters 
+
+Function-based view that accesses URL parameters. 
+
+def my_param_view(request, param): 
+
+    # Access the 'param' value from the URL 
+
+Protecting Views (Restrict Access) using @login_required Decorator 
+
+Function-based view protected with login_required decorator. 
+
+ 
+
+From django.contrib.auth.decorators import login_required 
+
+@login_required 
+
+def my_protected_view(request): 
+
+    # Your view logic here 
+
+ 
+
+Bootstrap CSS 
+
+Link to include Bootstrap CSS in the base template. 
+
+Add the following link to the <head> section of your base template (usually base.html): 
+
+ 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
+
+ 
+
+Bootstrap JavaScript 
+
+Script tag to include Bootstrap JavaScript library. 
+
+Include the Bootstrap JavaScript library at the end of the <body> section to enable certain features (for example, dropdowns, modals): 
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> 
+
+Bootstrap classes and components 
+
+Create visually appealing and responsive web pages without having to write CSS styles manually. 
+
+<a href="#" class="btn btn-primary">Click Me</a> 
+
+Configuration – Static files 
+
+Django settings for static files configuration. 
+
+In your Django settings (settings.py), define the following settings: 
+
+ 
+
+STATIC_URL = '/static/studio/edx.org-next/'  # URL to access static files 
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Directory to look for static files 
+
+ 
+
+Configuration – Installed apps 
+
+Defines a list of all the applications installed in the project. 
+
+Add 'django.contrib.staticfiles' to your INSTALLED_APPS in settings.py: 
+
+ 
+
+INSTALLED_APPS = [ 
+
+    # ... 
+
+    'django.contrib.staticfiles', 
+
+    # ... 
+
+] 
+
+Configuration – App Dirs 
+
+A configuration option used within the TEMPLATES setting. When set to TRUE, Django will look for template files within the app directories. 
+
+Make sure the APP_DIRS setting is set to True in the TEMPLATES list. This allows Django to look for static files within the apps' directories. 
+
+ 
+
+TEMPLATES = [ 
+
+    { 
+
+        # ... 
+
+        'APP_DIRS': True, 
+
+        # ... 
+
+    }, 
+
+] 
+
+Usage – Static content 
+
+Code to style the HTML templates and provide interactivity to web pages. 
+
+<link href="{% static 'your_app/css/style.css' %}" rel="stylesheet"> 
+
+<script src="{% static 'your_app/js/script.js' %}"></script> 
+
+<img src="{% static 'your_app/img/logo.png' %}" alt="Logo"> 
+
+Collecting static files 
+
+When deploying your project, you need to collect all static files into a single location. 
+
+python manage.py collectstatic 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
