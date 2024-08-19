@@ -6,16 +6,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'onlinecourse/course.css' %}">
 </head>
 <body>
-    <div class="card">
+    <div class="container"> <!--Stylize the root div with .container class -->
         <h2>{{ course.name }}</h2>
-        <h5>{{ course.description }}</h5>
+        <div class="card-columns-vertical"> <!--Stylize the second level card columns div with .card-columns-vertical class-->
+            {% for lesson in course.lesson_set.all %}
+            <div class="card"> <!--Stylize the third level lesson div with .card class-->
+                <div class="card-header">Lesson {{ forloop.counter }}: {{ lesson.title }}</div> <!--Stylize the fourth level lesson header  div with .card-header class-->
+                <div class="card-body">{{lesson.content}}</div>  <!--Stylize the fifth level lesson content div with .card-body class-->
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    <h2>Lessons: </h2>
-    {% for lesson in course.lesson_set.all %}
-    <div class="card">
-        <h5>Lesson {{lesson.order}} : {{lesson.title}}</h5>
-        <p>{{lesson.content}}</p>
-    </div>
-    {% endfor %}
 </body>
 </html>
