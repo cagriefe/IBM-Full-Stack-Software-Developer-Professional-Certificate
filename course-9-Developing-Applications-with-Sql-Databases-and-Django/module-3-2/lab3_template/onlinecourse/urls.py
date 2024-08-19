@@ -9,5 +9,9 @@ urlpatterns = [
     path(route='', view=views.popular_course_list, name='popular_course_list'),
     path('course/<int:course_id>/enroll/', views.enroll, name='enroll'),
     path('course/<int:course_id>/', views.course_details, name='course_details'),
+    path('logout/', views.logout_request, name='logout'),
+    path('login/', views.login_request, name='login'),
+    path('registration/', views.registration_request, name='registration'),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\
  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
